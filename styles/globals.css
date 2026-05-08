@@ -1,0 +1,226 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #0f172a;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent-400 to-accent-300 bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-accent-500 to-accent-400 text-white px-4 py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl hover:from-accent-600 hover:to-accent-500 transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden;
+  }
+
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-secondary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-accent-400/20 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-secondary:hover::before {
+    @apply opacity-100;
+  }
+
+  .btn-primary:hover::before {
+    @apply opacity-100;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-white border-2 border-accent-400 px-8 py-4 rounded-xl font-semibold hover:bg-accent-500 hover:text-white transition-all duration-300 relative overflow-hidden;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-white border-2 border-accent-400 px-6 py-3 rounded-xl font-semibold hover:bg-accent-500 hover:text-white transition-all duration-300 relative overflow-hidden;
+  }
+
+  .btn-outline::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-accent-400/20 to-transparent opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-outline:hover::before {
+    @apply opacity-100;
+  }
+  
+  .nav-link {
+    @apply text-accent-100 font-medium hover:text-white transition-colors duration-300 relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-[-2px] left-0 w-0 h-0.5 bg-gradient-to-r from-accent-400 to-accent-300 transition-all duration-300;
+  }
+  
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-full;
+  }
+  
+  .service-card {
+    @apply bg-primary-200 p-8 rounded-xl text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden border border-accent-600/30 backdrop-blur-sm;
+  }
+  
+  .service-card::before {
+    content: '';
+    @apply absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-400 to-accent-300 transform scale-x-0 transition-transform duration-300;
+  }
+  
+  .service-card:hover::before {
+    @apply scale-x-100;
+  }
+  
+  .service-card:hover {
+    @apply border-accent-400 bg-primary-300;
+  }
+  
+  .portfolio-item {
+    @apply relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 cursor-pointer;
+  }
+  
+  .portfolio-overlay {
+    @apply absolute inset-0 bg-gradient-to-br from-accent-600/95 to-accent-500/95 flex flex-col justify-center items-center text-white opacity-0 transition-opacity duration-300;
+  }
+  
+  .portfolio-item:hover .portfolio-overlay {
+    @apply opacity-100;
+  }
+  
+  .portfolio-item:hover .portfolio-image img {
+    @apply scale-110;
+  }
+  
+  .pricing-card {
+    @apply bg-primary-200 p-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 relative overflow-hidden border border-accent-600/30 flex flex-col text-white;
+  }
+
+  .pricing-card.popular {
+    @apply border-accent-400 ring-2 ring-accent-400/50;
+  }
+
+  .pricing-badge {
+    @apply absolute -top-0 -right-0 bg-accent-500 text-white text-xs px-3 py-1 rounded-bl-lg z-10;
+  }
+
+  .pricing-header {
+    @apply text-center mb-6;
+  }
+
+  .pricing-features {
+    @apply space-y-3 mb-6 flex-grow;
+  }
+
+  .contact-item {
+    @apply flex items-center gap-4 p-6 bg-primary-200 rounded-xl hover:translate-x-1 hover:shadow-lg transition-all duration-300 border border-accent-600/30;
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-3 border-2 border-accent-600/50 rounded-lg font-medium text-base transition-all duration-300 bg-primary-100 text-white focus:border-accent-400 focus:bg-primary-200 focus:outline-none focus:ring-2 focus:ring-accent-400/50;
+  }
+  
+  .notification {
+    @apply fixed top-20 right-4 bg-gradient-to-r from-accent-500 to-accent-400 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300 backdrop-blur-sm border border-accent-400/20;
+  }
+
+  .testimonial-card {
+    @apply bg-primary-200 text-white p-8 pb-20 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 border border-accent-600/30;
+  }
+
+  .testimonial-content {
+    @apply h-full flex flex-col justify-between;
+  }
+
+  .testimonial-text {
+    @apply text-lg mb-6 italic;
+  }
+
+  .testimonial-author {
+    @apply flex items-center gap-4 mt-auto;
+  }
+
+  .author-avatar {
+    @apply w-12 h-12 bg-accent-500 rounded-full flex items-center justify-center text-white font-bold text-lg;
+  }
+
+  .author-info h4 {
+    @apply font-semibold text-white mb-1;
+  }
+
+  .portfolio-image {
+    @apply h-48 bg-gradient-to-br from-accent-400 to-accent-500 flex items-center justify-center relative overflow-hidden;
+  }
+
+  .campaign-preview {
+    @apply text-center text-white;
+  }
+
+  .campaign-preview i {
+    @apply text-4xl mb-2;
+  }
+
+  .campaign-preview h4 {
+    @apply text-xl font-semibold;
+  }
+
+  .portfolio-overlay h3 {
+    @apply text-2xl font-bold mb-2;
+  }
+
+  .portfolio-overlay p {
+    @apply text-accent-100 mb-4;
+  }
+
+  .campaign-stats {
+    @apply flex flex-wrap gap-2 justify-center;
+  }
+
+  .campaign-stats span {
+    @apply bg-accent-600/50 px-3 py-1 rounded-full text-sm;
+  }
+
+  .floating-card {
+    @apply bg-primary-200 p-8 rounded-2xl shadow-2xl border border-accent-600/30 backdrop-blur-sm;
+  }
+
+  .marketing-graphic {
+    @apply text-center py-12;
+  }
+
+  .service-icon {
+    @apply w-16 h-16 bg-accent-500 rounded-full flex items-center justify-center text-white text-2xl mx-auto mb-6;
+  }
+}
+
+@layer utilities {
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+
+  .glass-effect {
+    @apply bg-accent-500/10 backdrop-blur-sm border border-accent-600/20;
+  }
+
+  .glow-effect {
+    @apply shadow-2xl shadow-accent-500/20;
+  }
+
+  .smooth-scroll {
+    @apply scroll-smooth;
+  }
+}
