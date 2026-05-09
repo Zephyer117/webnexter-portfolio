@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 
@@ -106,7 +105,7 @@ const Marketing = () => {
       features: [
         'Social Media Management (4 platforms)',
         'Advanced SEO & Content',
-        'PPC Management ($2,000 ad spend)',
+        'Ads Management ($2,000 ad spend)',
         'Bi-weekly Reporting',
         'Priority Support',
         'A/B Testing'
@@ -114,11 +113,11 @@ const Marketing = () => {
     },
     {
       name: 'Enterprise',
-      price: '12000',
+      price: '13500',
       features: [
         'Full-Service Marketing',
         'Unlimited Platforms',
-        'PPC Management ($5,000+ ad spend)',
+        'PPC Management ($5,000+ ad spend Extra for Better Results)',
         'Weekly Reporting & Analysis',
         'Dedicated Account Manager',
         'Custom Strategy Development'
@@ -128,18 +127,18 @@ const Marketing = () => {
 
   const testimonials = [
     {
-      name: 'Sarah Johnson',
-      role: 'CEO, Fashion Boutique',
-      content: 'Webnexter transformed our online presence. Our social media engagement increased by 300% and sales doubled within 6 months!'
+      name: 'Shahed Akash',
+      role: 'Founder, Glamour & Glow',
+      content: 'Webnexter transformed our online presence. Our social media engagement increased by 95% and sales doubled within 6 months!'
     },
     {
-      name: 'Mike Chen',
-      role: 'Founder, Tech Startup',
-      content: 'The SEO results have been outstanding. We\'re now ranking on page 1 for our main keywords and organic traffic is up 400%.'
+      name: 'Sharif',
+      role: 'Founder, Jewel Watch',
+      content: 'The SEO results have been outstanding. We\'re now ranking on page 1 for our main keywords and organic traffic is up 120%.'
     },
     {
-      name: 'Lisa Rodriguez',
-      role: 'Marketing Director, SaaS Company',
+      name: 'Moni Mukta Mart',
+      role: 'Marketing Director',
       content: 'Their PPC management expertise helped us reduce our cost-per-acquisition by 60% while doubling our conversion rate.'
     }
   ];
@@ -148,21 +147,18 @@ const Marketing = () => {
     <>
       <Head>
         <title>Digital Marketing Services - Webnexter</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
       </Head>
 
-      <div className="min-h-screen bg-secondary-50">
+      <div className="min-h-screen bg-secondary-50" id="marketing-page">
         <Navbar />
 
       {/* Hero Section */}
-      <section className="hero min-h-screen flex items-center bg-gradient-to-br from-secondary-100 to-secondary-50">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center">
-            <motion.div 
-              className="lg:w-1/2 mb-12 lg:mb-0 text-white"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+      <section className='bg-gradient-to-br from-secondary-100 to-secondary-50 pt-24 lg:pt-32 pb-24'>
+      <section className="max-w-7xl mx-auto px-5">
+
+          <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 ">
+            <div 
+              className="mb-12 lg:mb-0 text-white"
             >
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Digital Marketing
@@ -172,8 +168,8 @@ const Marketing = () => {
                 Transform your business with data-driven marketing strategies that deliver measurable results and drive sustainable growth
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a href="#services" className="btn btn-primary">Our Services</a>
-                <a href="/contact" className="btn btn-secondary">Free Consultation</a>
+                <a href="#services" className="btn btn-primary text-center">Our Services</a>
+                <a href="/contact" className="btn btn-secondary text-center">Free Consultation</a>
               </div>
               <div className="grid grid-cols-3 gap-6">
                 <div className="">
@@ -189,47 +185,36 @@ const Marketing = () => {
                   <p className="text-accent-100">Average ROI</p>
                 </div>
               </div>
-            </motion.div>
-            <motion.div 
-              className="lg:w-1/2 lg:pl-12"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+            </div>
+            <div 
+              className=""
             >
               <div className="floating-card">
                 <div className="marketing-graphic">
                   <i className="fas fa-chart-line text-6xl text-primary-600"></i>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </div>
+      </section>
       </section>
 
       {/* Services Section */}
       <section id="services" className="py-20 bg-primary-200">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Marketing Services</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Comprehensive digital marketing solutions for your business growth
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="service-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                className={`service-card hover-lift`}
+                onMouseEnter={(e) => e.currentTarget.classList.add('hover-lift')}
+                onMouseLeave={(e) => e.currentTarget.classList.remove('hover-lift')}
               >
                 <div className="service-icon">
                   <i className={service.icon}></i>
@@ -244,7 +229,7 @@ const Marketing = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -253,27 +238,19 @@ const Marketing = () => {
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-primary-100">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-16 ">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Marketing Success Stories</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Real results from real campaigns
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolio.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="portfolio-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                className={`portfolio-item hover-lift`}
+                onMouseEnter={(e) => e.currentTarget.classList.add('hover-lift')}
+                onMouseLeave={(e) => e.currentTarget.classList.remove('hover-lift')}
               >
                 <div className="portfolio-image">
                   <div className="campaign-preview">
@@ -293,7 +270,7 @@ const Marketing = () => {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -302,27 +279,19 @@ const Marketing = () => {
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-primary-200">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-16 ">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Marketing Packages</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Flexible pricing options for businesses of all sizes
             </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {pricing.map((plan, index) => (
-              <motion.div
+              <div
                 key={index}
                 className={`pricing-card ${plan.popular ? 'popular' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                onMouseEnter={(e) => e.currentTarget.classList.add('hover-lift')}
+                onMouseLeave={(e) => e.currentTarget.classList.remove('hover-lift')}
               >
                 {plan.popular && <div className="pricing-badge">Most Popular</div>}
                 <div className="pricing-header">
@@ -350,7 +319,7 @@ const Marketing = () => {
                 <a href="/contact" className={`btn ${plan.popular ? 'btn-primary' : 'btn-outline'} w-[40%] text-center`}>
                   Get Started
                 </a>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -359,27 +328,19 @@ const Marketing = () => {
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 bg-primary-100">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-16 ">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Client Success Stories</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Hear what our clients have to say about our marketing services
             </p>
-          </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="testimonial-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                onMouseEnter={(e) => e.currentTarget.classList.add('hover-lift')}
+                onMouseLeave={(e) => e.currentTarget.classList.remove('hover-lift')}
               >
                 <div className="testimonial-content">
                   <p className="testimonial-text text-accent-100">"{testimonial.content}"</p>
@@ -393,7 +354,7 @@ const Marketing = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -419,12 +380,7 @@ const Marketing = () => {
         ></div>
         
         <div className="relative container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
               Ready to Grow Your Business?
             </h2>
@@ -439,7 +395,7 @@ const Marketing = () => {
                 Schedule Consultation
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
       </div>

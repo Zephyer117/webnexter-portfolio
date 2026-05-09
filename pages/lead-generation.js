@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 
@@ -100,70 +99,65 @@ const LeadGeneration = () => {
   const pricing = [
     {
       name: 'Starter',
-      price: '1,499',
-      period: '/month',
+      price: '1000',
+      period: '',
       features: [
-        '50 Leads/Month',
+        '300-500 Leads',
         'Basic Strategy',
-        'Email Marketing',
-        'Monthly Reporting',
         'Email Support'
       ],
-      excluded: ['Custom Landing Pages', 'Advanced Analytics', 'Dedicated Manager']
+      excluded: ['Advanced Analytics', 'Dedicated Manager']
     },
     {
       name: 'Professional',
-      price: '2,999',
-      period: '/month',
+      price: '3000',
+      period: '',
       popular: true,
       features: [
-        '150 Leads/Month',
+        '1000-2000 Leads',
         'Advanced Strategy',
-        'Multi-channel Marketing',
-        'Custom Landing Pages',
-        'A/B Testing',
-        'Bi-weekly Reporting',
+        'Email Marketing',
+        'Weekly Reporting',
         'Priority Support'
       ]
     },
     {
       name: 'Enterprise',
-      price: '5,999',
-      period: '/month',
+      price: '5000',
+      period: '',
       features: [
-        '500+ Leads/Month',
+        '500+ Leads/Day',
         'Full-Service Strategy',
         'Custom Campaigns',
         'Advanced Analytics',
-        'CRM Integration',
+        'B2B / B2C Planning',
         'Weekly Reporting',
-        'Dedicated Manager',
-        '24/7 Support'
+        'Dedicated Manager'
       ]
     }
   ];
 
   const testimonials = [
     {
-      name: 'Michael Thompson',
-      role: 'CEO, B2B Software',
-      content: 'Webnexter\'s lead generation strategy helped us increase our qualified leads by 300% in just 3 months. Their approach is data-driven and results-focused.'
+      name: 'RMS Group',
+      role: 'CEO, B2B Leads',
+      content: 'Webnexter\'s lead generation strategy helped us increase our qualified leads by 85% in just 3 months. Their approach is data-driven and results-focused.'
     },
     {
-      name: 'Sarah Williams',
-      role: 'Marketing Director, Healthcare',
+      name: 'Jewel Watch',
+      role: 'Marketing Director, B2C leads',
       content: 'We struggled with lead generation until we partnered with Webnexter. They delivered a comprehensive strategy that consistently brings in high-quality leads.'
     },
     {
-      name: 'James Anderson',
-      role: 'Founder, Consulting Firm',
+      name: 'Glamour & Glow',
+      role: 'Founder, Sell Leads',
       content: 'The team understands our target market perfectly. Their multi-channel approach has helped us build a steady pipeline of qualified prospects.'
     }
   ];
 
   const metrics = [
     {
-      number: '500K+',
+      number: '10K+',
       label: 'Leads Generated',
       icon: 'fas fa-users'
     },
@@ -173,12 +167,12 @@ const LeadGeneration = () => {
       icon: 'fas fa-chart-line'
     },
     {
-      number: '300%',
+      number: '92%',
       label: 'ROI Average',
       icon: 'fas fa-dollar-sign'
     },
     {
-      number: '50+',
+      number: '25+',
       label: 'Industries Served',
       icon: 'fas fa-industry'
     }
@@ -188,21 +182,18 @@ const LeadGeneration = () => {
     <>
       <Head>
         <title>Lead Generation Services - Webnexter</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
       </Head>
 
-      <div className="min-h-screen bg-secondary-50">
+      <div className="min-h-screen bg-secondary-50" id="lead-gen-page">
         <Navbar />
 
       {/* Hero Section */}
-      <section className="hero min-h-screen flex items-center bg-gradient-to-br from-secondary-100 to-secondary-50">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center">
-            <motion.div 
-              className="lg:w-1/2 mb-12 lg:mb-0 text-white"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+      <section className='bg-gradient-to-br from-secondary-100 to-secondary-50 pt-24 lg:pt-32 pb-24'>
+      <section className="max-w-7xl mx-auto px-5">
+
+          <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 ">
+            <div 
+              className="mb-12 lg:mb-0 text-white"
             >
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Lead Generation
@@ -212,8 +203,8 @@ const LeadGeneration = () => {
                 Transform your business with data-driven lead generation strategies that deliver real results
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a href="#services" className="btn btn-primary">Our Services</a>
-                <a href="/contact" className="btn btn-secondary">Free Audit</a>
+                <a href="#services" className="btn btn-primary text-center">Our Services</a>
+                <a href="/contact" className="btn btn-secondary text-center">Free Audit</a>
               </div>
               <div className="grid grid-cols-2 gap-6">
                 <div className="">
@@ -225,71 +216,56 @@ const LeadGeneration = () => {
                   <p className="text-accent-100">Conversion Rate</p>
                 </div>
               </div>
-            </motion.div>
-            <motion.div 
-              className="lg:w-1/2 lg:pl-12"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+            </div>
+            <div 
+              className=""
             >
               <div className="floating-card">
                 <div className="marketing-graphic">
                   <i className="fas fa-funnel-dollar text-6xl text-green-600"></i>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </div>
+      </section>
       </section>
 
       {/* Metrics Section */}
-      <section className="py-20 bg-primary-100">
+      <section className="py-12 bg-primary-100">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {metrics.map((metric, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="text-center"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="metric-icon mb-4">
                   <i className={`${metric.icon} text-3xl text-green-600`}></i>
                 </div>
                 <h3 className="text-3xl font-bold text-green-600 mb-2">{metric.number}</h3>
                 <p className="text-gray-200">{metric.label}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-primary-200">
+      <section id="services" className="py-12 bg-primary-200">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-8 ">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Lead Generation Services</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Comprehensive lead generation solutions for your business growth
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
-                className="service-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                className="service-card hover-lift"
+                onMouseEnter={(e) => e.currentTarget.classList.add('hover-lift')}
+                onMouseLeave={(e) => e.currentTarget.classList.remove('hover-lift')}
               >
                 <div className="service-icon">
                   <i className={service.icon}></i>
@@ -304,36 +280,26 @@ const LeadGeneration = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Strategies Section */}
-      <section id="strategies" className="py-20 bg-primary-100">
+      <section id="strategies" className="py-12 bg-primary-100">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-8 ">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Lead Generation Strategies</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Proven approaches to attract and convert your ideal customers
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {strategies.map((strategy, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="strategy-card"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="flex items-start gap-6">
                   <div className="strategy-icon flex-shrink-0">
@@ -352,36 +318,26 @@ const LeadGeneration = () => {
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section id="process" className="py-20 bg-primary-200">
+      <section id="process" className="py-12 bg-primary-200">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-8 ">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Our Lead Generation Process</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               A systematic approach to deliver consistent, high-quality leads
             </p>
-          </motion.div>
-          <div className="space-y-8">
+          </div>
+          <div className="space-y-4">
             {process.map((step, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="process-step flex flex-col md:flex-row items-center gap-8"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="flex-shrink-0">
                   <div className="step-number w-20 h-20 bg-accent-500 text-white rounded-full flex items-center justify-center text-2xl font-bold">
@@ -392,42 +348,34 @@ const LeadGeneration = () => {
                   <h3 className="text-2xl font-semibold mb-2 text-white">{step.title}</h3>
                   <p className="text-accent-100">{step.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-primary-200">
+      <section id="pricing" className="py-12 bg-primary-200">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-8 ">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Lead Generation Packages</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Flexible pricing for lead generation services
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pricing.map((plan, index) => (
-              <motion.div
+              <div
                 key={index}
                 className={`pricing-card ${plan.popular ? 'popular' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                onMouseEnter={(e) => e.currentTarget.classList.add('hover-lift')}
+                onMouseLeave={(e) => e.currentTarget.classList.remove('hover-lift')}
               >
                 {plan.popular && <div className="pricing-badge">Most Popular</div>}
                 <div className="pricing-header">
                   <h3 className="text-white">{plan.name}</h3>
                   <div className="price text-white">
-                    <span className="currency">$</span>
+                    <span className="currency">৳</span>
                     <span className="amount">{plan.price}</span>
                     <span className="period">{plan.period}</span>
                   </div>
@@ -449,41 +397,31 @@ const LeadGeneration = () => {
                 <a href="/contact" className={`btn ${plan.popular ? 'btn-primary' : 'btn-outline'} lg:w-[40%] md:w-[50%] w-[60%]  text-center`}>
                   Get Started
                 </a>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonials" className="py-20 bg-primary-100">
+      <section id="testimonials" className="py-12 bg-primary-100">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="text-center mb-8 ">
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Client Success Stories</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Hear what our clients have to say about our lead generation services
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="testimonial-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="testimonial-content">
                   <p>"{testimonial.content}"</p>
                 </div>
-                <div className="testimonial-author">
+                <div className="testimonial-author flex flex-col items-start">
                   <div className="author-info">
                     <h4>{testimonial.name}</h4>
                     <p>{testimonial.role}</p>
@@ -494,14 +432,14 @@ const LeadGeneration = () => {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section id="cta" className="py-20 relative overflow-hidden">
+      <section id="cta" className="py-12 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
         
@@ -520,16 +458,11 @@ const LeadGeneration = () => {
         ></div>
         
         <div className="relative container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
               Ready to Grow Your Pipeline?
             </h2>
-            <p className="text-xl mb-8 max-w-2xl mx-auto text-blue-100">
+            <p className="text-lg mb-6 max-w-lg mx-auto text-blue-100">
               Let's create a lead generation strategy that consistently delivers qualified prospects and drives revenue growth.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -540,7 +473,7 @@ const LeadGeneration = () => {
                 Free Strategy Call
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
       </div>

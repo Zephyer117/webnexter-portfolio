@@ -40,7 +40,7 @@ const Navbar = () => {
       // Scroll to section on current page
       const element = document.getElementById(item.id);
       if (element) {
-        const offsetTop = element.offsetTop - 80;
+        const offsetTop = element.offsetTop - 100;
         window.scrollTo({
           top: offsetTop,
           behavior: 'smooth',
@@ -63,19 +63,19 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300  ${
         scrolled
           ? 'bg-secondary-50/98 backdrop-blur-xs shadow-lg border-b border-accent-600/20'
           : 'bg-secondary-50/95 backdrop-blur-xs shadow-sm border-b border-accent-600/10'
       }`}
     >
-      <div className="max-w-[80%] mx-auto px-5 flex justify-between items-center h-20">
+      <div className="max-w-[1280px] mx-auto px-5 py-4 lg:py-6 flex justify-between items-center">
         <div className="nav-logo">
           <h2 className="text-2xl font-bold gradient-text">Webnexter</h2>
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex list-none gap-8">
+        <ul className="hidden lg:flex list-none gap-8">
           {navItems.map((item) => (
             <li key={item.id} className="nav-item">
               {item.href ? (
@@ -98,7 +98,7 @@ const Navbar = () => {
 
         {/* Mobile Navigation Toggle */}
         <button
-          className="md:hidden flex flex-col cursor-pointer"
+          className="lg:hidden flex flex-col cursor-pointer"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle navigation"
         >
@@ -122,7 +122,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Menu */}
       <ul
-        className={`md:hidden fixed left-0 top-20 w-full bg-primary-50 shadow-xl transition-all duration-300 ${
+        className={`md:block fixed left-0 top-full w-full bg-primary-50 shadow-xl transition-all duration-300 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >

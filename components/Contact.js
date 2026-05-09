@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { useState, useEffect } from 'react';
 import { contactInfo } from '../data/portfolio';
 
 const Contact = () => {
@@ -14,10 +12,29 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const element = document.getElementById('contact-section');
+    if (element) {
+      observer.observe(element);
+    }
+
+    return () => {
+      if (element) {
+        observer.unobserve(element);
+      }
+    };
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -66,31 +83,28 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-slate-900 via-indigo-900/40 to-slate-900">
+    <section id="contact" className="py-32 bg-gradient-to-br from-slate-900 via-indigo-900/40 to-slate-900">
       <div className="max-w-7xl mx-auto px-5">
-        <motion.div
-          ref={ref}
+        <div
+          id="contact-section"
           className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">Get In Touch</h2>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
             Let's create something amazing together
           </p>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Information */}
-          <motion.div
+          <div
             className="space-y-6"
-            initial={{ opacity: 0, x: -30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            {contactInfo.map((info) => (
-              <div key={info.id} className="contact-item">
+            {contactInfo.map((info, index) => (
+              <div 
+                key={info.id}
+                className="contact-item"
+              >
                 <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-full flex items-center justify-center text-white text-xl flex-shrink-0">
                   <i className={info.icon} />
                 </div>
@@ -102,15 +116,12 @@ const Contact = () => {
                 </div>
               </div>
             ))}
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
-          <motion.form
+          <form
             onSubmit={handleSubmit}
             className="space-y-5"
-            initial={{ opacity: 0, x: 30 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="form-group">
@@ -193,21 +204,17 @@ const Contact = () => {
             >
               {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
-          </motion.form>
+          </form>
         </div>
       </div>
 
       {/* Notification */}
       {showNotification && (
-        <motion.div
-          className="notification"
-          initial={{ x: 400 }}
-          animate={{ x: 0 }}
-          exit={{ x: 400 }}
-          transition={{ duration: 0.3 }}
+        <div
+          className="notification fade-in"
         >
           Thank you for your message! I'll get back to you soon.
-        </motion.div>
+        </div>
       )}
     </section>
   );

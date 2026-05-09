@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 
@@ -118,25 +117,23 @@ const WebDesign = () => {
   const pricing = [
     {
       name: 'Starter Website',
-      price: '2,499',
+      price: '10,000',
       features: [
-        '5-Page Website',
+        '3-Page Website',
         'Responsive Design',
         'Contact Form',
-        'Basic SEO',
         '1 Month Support'
       ],
       excluded: ['Custom Animations', 'Advanced Features', 'CMS Integration']
     },
     {
       name: 'Professional Website',
-      price: '4,999',
+      price: '20,000',
       popular: true,
       features: [
-        '10-Page Website',
+        '5-Page Website',
         'Custom Design',
         'CMS Integration',
-        'Advanced SEO',
         'Contact Forms',
         'Social Media Integration',
         '3 Months Support'
@@ -144,7 +141,7 @@ const WebDesign = () => {
     },
     {
       name: 'E-commerce Website',
-      price: '7,999',
+      price: '35,000',
       features: [
         'Unlimited Pages',
         'E-commerce Functionality',
@@ -152,7 +149,8 @@ const WebDesign = () => {
         'Product Management',
         'Order System',
         'Advanced Analytics',
-        '6 Months Support'
+        '6 Months Support',
+        'Price Based on Project Complexity'
       ]
     }
   ];
@@ -179,21 +177,18 @@ const WebDesign = () => {
     <>
       <Head>
         <title>Web Design Services - Webnexter</title>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
       </Head>
 
       <div className="min-h-screen bg-secondary-50">
         <Navbar />
 
       {/* Hero Section */}
-      <section className="hero min-h-screen flex items-center bg-gradient-to-br from-secondary-100 to-secondary-50">
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col lg:flex-row items-center">
-            <motion.div 
-              className="lg:w-1/2 mb-12 lg:mb-0 text-white"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+      <section className='bg-gradient-to-br from-secondary-100 to-secondary-50 pt-24 lg:pt-32 pb-24'>
+      <section className="max-w-7xl mx-auto px-5">
+
+          <div className="grid md:grid-cols-2 gap-16 items-center relative z-10 ">
+            <div 
+              className="mb-12 lg:mb-0 text-white"
             >
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Web Design
@@ -203,8 +198,8 @@ const WebDesign = () => {
                 Create stunning, user-centered websites that convert visitors into customers and drive business growth
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <a href="#services" className="btn btn-primary">Our Services</a>
-                <a href="#contact" className="btn btn-secondary">Get Quote</a>
+                <a href="#services" className="btn btn-primary text-center">Our Services</a>
+                <a href="#contact" className="btn btn-secondary text-center">Get Quote</a>
               </div>
               <div className="grid grid-cols-3 gap-6">
                 <div className="">
@@ -220,47 +215,36 @@ const WebDesign = () => {
                   <p className="text-accent-100">Support Available</p>
                 </div>
               </div>
-            </motion.div>
-            <motion.div 
-              className="lg:w-1/2 lg:pl-12"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+            </div>
+            <div 
+              className=""
             >
               <div className="floating-card">
                 <div className="marketing-graphic">
                   <i className="fas fa-code text-6xl text-blue-600"></i>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </div>
       </section>
-
+      </section>
+    
       {/* Services Section */}
       <section id="services" className="py-20 bg-primary-200">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div 
+            className="text-center mb-16 "
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Web Design Services</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Comprehensive web design solutions for your digital presence
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="service-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="service-icon">
                   <i className={service.icon}></i>
@@ -275,7 +259,7 @@ const WebDesign = () => {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -284,27 +268,21 @@ const WebDesign = () => {
       {/* Portfolio Section */}
       <section id="portfolio" className="py-20 bg-primary-100">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div 
+            className="text-center mb-16 "
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Our Portfolio</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Explore our web design projects and creative solutions
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolio.map((item, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="portfolio-item"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                onMouseEnter={(e) => e.currentTarget.classList.add('hover-lift')}
+                onMouseLeave={(e) => e.currentTarget.classList.remove('hover-lift')}
               >
                 <div className="portfolio-image">
                   <img src={item.image} alt={item.title} className="w-full h-64 object-cover" />
@@ -318,7 +296,7 @@ const WebDesign = () => {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -327,27 +305,19 @@ const WebDesign = () => {
       {/* Process Section */}
       <section id="process" className="py-20 bg-primary-200">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div 
+            className="text-center mb-16 "
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Our Design Process</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               A systematic approach to creating exceptional web experiences
             </p>
-          </motion.div>
+          </div>
           <div className="space-y-8">
             {process.map((step, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="process-step flex flex-col md:flex-row items-center gap-8"
-                initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="flex-shrink-0">
                   <div className="step-number w-20 h-20 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold">
@@ -358,7 +328,7 @@ const WebDesign = () => {
                   <h3 className="text-2xl font-semibold mb-2 text-white">{step.title}</h3>
                   <p className="text-accent-100">{step.description}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -367,33 +337,25 @@ const WebDesign = () => {
       {/* Pricing Section */}
       <section id="pricing" className="py-20 bg-primary-200">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div 
+            className="text-center mb-16 "
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Web Design Packages</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               Transparent pricing for web development services
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {pricing.map((plan, index) => (
-              <motion.div
+              <div
                 key={index}
                 className={`pricing-card ${plan.popular ? 'popular' : ''}`}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 {plan.popular && <div className="pricing-badge">Most Popular</div>}
                 <div className="pricing-header">
                   <h3>{plan.name}</h3>
                   <div className="price">
-                    <span className="currency">$</span>
+                    <span className="currency">৳</span>
                     <span className="amount">{plan.price}</span>
                   </div>
                 </div>
@@ -414,7 +376,7 @@ const WebDesign = () => {
                 <a href="/contact" className={`btn ${plan.popular ? 'btn-primary' : 'btn-outline'} w-[40%] text-center`}>
                   Get Started
                 </a>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -423,27 +385,19 @@ const WebDesign = () => {
       {/* Testimonials Section */}
       <section id="testimonials" className="py-20 bg-primary-100">
         <div className="container mx-auto px-6">
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div 
+            className="text-center mb-16 "
           >
             <h2 className="text-4xl lg:text-5xl font-bold mb-4 text-white">Client Testimonials</h2>
             <p className="text-xl text-accent-100 max-w-2xl mx-auto">
               What our clients say about our web design services
             </p>
-          </motion.div>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={index}
                 className="testimonial-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="testimonial-content">
                   <p className="text-accent-100">"{testimonial.content}"</p>
@@ -459,7 +413,7 @@ const WebDesign = () => {
                     ))}
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
@@ -485,12 +439,7 @@ const WebDesign = () => {
         ></div>
         
         <div className="relative container mx-auto px-6 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div>
             <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-200">
               Ready to Build Your Website?
             </h2>
@@ -505,7 +454,7 @@ const WebDesign = () => {
                 Free Consultation
               </a>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
       </div>

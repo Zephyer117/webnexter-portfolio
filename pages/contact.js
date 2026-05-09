@@ -13,7 +13,9 @@ const ContactPage = () => {
 
       <div className="min-h-screen bg-slate-900">
         <Navbar />
-        <Contact />
+        <div className="pt-16 lg:pt-20">
+          <Contact />
+        </div>
       </div>
     </>
   );
