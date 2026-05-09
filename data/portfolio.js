@@ -28,13 +28,6 @@ export const portfolioItems = [
     image: '/Images/bh Color.png',
   },
   {
-    id: 5,
-    title: 'LZG T-Shirt Design',
-    category: 'tshirts',
-    description: 'Apparel Design',
-    image: '/Images/l+Z+G (tshirt).png',
-  },
-  {
     id: 6,
     title: 'Branding Mockup',
     category: 'branding',

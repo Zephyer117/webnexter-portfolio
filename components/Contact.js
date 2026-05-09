@@ -211,7 +211,7 @@ const Contact = () => {
       {/* Notification */}
       {showNotification && (
         <div
-          className="notification fade-in"
+          className="notification show fade-in"
         >
           Thank you for your message! I'll get back to you soon.
         </div>
