@@ -1,10 +1,9 @@
 const Footer = () => {
   const socialLinks = [
-    { icon: 'fab fa-facebook-f', href: '#' },
-    { icon: 'fab fa-twitter', href: '#' },
-    { icon: 'fab fa-instagram', href: '#' },
-    { icon: 'fab fa-linkedin-in', href: '#' },
-    { icon: 'fab fa-behance', href: '#' },
+    { icon: 'fab fa-facebook-f', href: 'https://www.facebook.com/webnexterofficials/' },
+    { icon: 'fab fa-instagram', href: 'https://www.instagram.com/berryalan57/' },
+    { icon: 'fab fa-linkedin-in', href: 'https://www.linkedin.com/in/ms-utsho/?skipRedirect=true' },
+    { icon: 'fab fa-behance', href: 'https://www.behance.net/msutsho117' },
   ];
 
   return (

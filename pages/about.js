@@ -37,6 +37,13 @@ const About = () => {
       bio: 'Hemen manages our Meta ADS and social media, ensuring our solutions are both beautiful and functional.',
       image: 'HM',
       skills: ['Meta ADS', 'Social Media Management', 'Content Creation']
+    },
+    {
+      name: 'SM Mahtir Mahmud',
+      role: 'Social Media Handler & Lead Generator',
+      bio: 'Mahtir manages our social media and generates leads, ensuring our solutions are both beautiful and functional.',
+      image: 'SMMM',
+      skills: ['Social Media Management', 'Content Creation', 'Lead Generation']
     }
   ];
 
