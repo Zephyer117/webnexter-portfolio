@@ -90,9 +90,9 @@ const About = () => {
           id="about-section"
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">About Me</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">About US</h2>
           <p className="text-xl text-gray-200 max-w-2xl mx-auto">
-            Passionate designer creating impactful visual solutions
+            Marketing Solution For Your Business
           </p>
         </div>
 
@@ -101,10 +101,13 @@ const About = () => {
             <p
               className="text-lg leading-relaxed mb-8 text-gray-300 text-center"
             >
-I’m a professional specializing in Graphic Design & Web Development.
-From brand identity and logo design to high-converting websites and marketing strategies, Along with my team I help businesses build a strong digital presence that attracts attention and drives growth. ✨ <br /><br />
-
-With a focus on creativity, strategy, and results, I create visuals and experiences that connect with audiences, strengthen brands, and generate real business opportunities. 🚀
+We are a full-service creative and marketing team dedicated to helping businesses grow, scale, and dominate their digital presence. 🚀
+<br /><br />
+From eye-catching Graphic Design and powerful Brand Identity to modern Website Development, Strategic Marketing, and Lead Generation we provide complete business solutions designed to attract attention, build trust, and increase sales. ✨
+<br /><br />
+We don’t just create designs or websites we build experiences that connect with customers, strengthen your brand, and turn ideas into real business growth.
+<br /><br />
+Whether you’re launching a new brand or scaling an existing business, our team focuses on delivering creative strategies, impactful visuals, and result-driven marketing that helps your business stand out in today’s competitive market. 💼🔥
             </p>
 
             <div

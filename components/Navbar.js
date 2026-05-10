@@ -103,17 +103,17 @@ const Navbar = () => {
           aria-label="Toggle navigation"
         >
           <span
-            className={`w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300 ${
+            className={`w-6 h-0.5 bg-gray-200 mb-1.5 transition-all duration-300 ${
               isOpen ? 'rotate-45 translate-y-2' : ''
             }`}
           />
           <span
-            className={`w-6 h-0.5 bg-gray-700 mb-1.5 transition-all duration-300 ${
+            className={`w-6 h-0.5 bg-gray-200 mb-1.5 transition-all duration-300 ${
               isOpen ? 'opacity-0' : ''
             }`}
           />
           <span
-            className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${
+            className={`w-6 h-0.5 bg-gray-200 transition-all duration-300 ${
               isOpen ? '-rotate-45 -translate-y-2' : ''
             }`}
           />
